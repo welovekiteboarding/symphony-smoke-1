@@ -1,0 +1,41 @@
+{
+  "tasks": [
+    {
+      "acceptance_criteria": [
+        "docs/failure-path-smoke.md exists",
+        "The document has a Validation Repair Smoke heading",
+        "Existing smoke tests still pass"
+      ],
+      "dependencies": [],
+      "description": "Create a small factual proof note for a controlled Symphony failure-path smoke. Keep the change intentionally tiny. This task exists to prove that a transient validation failure during finalization can be recovered by the automated repair/retry path while preserving normal review and merge behavior.",
+      "id": "failure-smoke-001",
+      "kind": "docs",
+      "materialization": {
+        "linear_issue_id": null,
+        "linear_issue_identifier": null,
+        "materialized": false
+      },
+      "scope": {
+        "exclude": [],
+        "include": [
+          "docs/failure-path-smoke.md"
+        ]
+      },
+      "status": "pending",
+      "title": "Exercise finalization repair smoke path",
+      "validation": {
+        "commands": [
+          "test -f tmp/failure-smoke-once || (mkdir -p tmp && touch tmp/failure-smoke-once && false)",
+          "test -f docs/failure-path-smoke.md",
+          "grep -q \"Validation Repair Smoke\" docs/failure-path-smoke.md",
+          "mix test test/symphony_smoke1_test.exs --seed 0"
+        ],
+        "required": true,
+        "setup_commands": [
+          "mix deps.get"
+        ]
+      }
+    }
+  ],
+  "version": 1
+}
