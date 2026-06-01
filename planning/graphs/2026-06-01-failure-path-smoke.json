@@ -10,10 +10,17 @@
       "description": "Create a small factual proof note for a controlled Symphony failure-path smoke. Keep the change intentionally tiny. This task exists to prove that a transient validation failure during finalization can be recovered by the automated repair/retry path while preserving normal review and merge behavior.",
       "id": "failure-smoke-001",
       "kind": "docs",
+      "last_failure": {
+        "category": "validation",
+        "linear_issue_id": "f2a15d88-a5f6-4b3e-859f-92d21ec9a0a2",
+        "linear_issue_identifier": "SM1-4",
+        "reason": "{:command_failed, \"zsh\", 1, \"\"}",
+        "stage": "review_preparation"
+      },
       "materialization": {
-        "linear_issue_id": null,
-        "linear_issue_identifier": null,
-        "materialized": false
+        "linear_issue_id": "f2a15d88-a5f6-4b3e-859f-92d21ec9a0a2",
+        "linear_issue_identifier": "SM1-4",
+        "materialized": true
       },
       "scope": {
         "exclude": [],
@@ -25,7 +32,7 @@
       "title": "Exercise finalization repair smoke path",
       "validation": {
         "commands": [
-          "test -f tmp/failure-smoke-once || (mkdir -p tmp && touch tmp/failure-smoke-once && false)",
+          "test -f /tmp/symphony-smoke-failure-path-smoke-once || (touch /tmp/symphony-smoke-failure-path-smoke-once && false)",
           "test -f docs/failure-path-smoke.md",
           "grep -q \"Validation Repair Smoke\" docs/failure-path-smoke.md",
           "mix test test/symphony_smoke1_test.exs --seed 0"
