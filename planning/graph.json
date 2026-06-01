@@ -11,7 +11,9 @@
       "id": "smoke-graph-001",
       "kind": "docs",
       "materialization": {
-        "materialized": false
+        "linear_issue_id": "c02d989d-f5c3-4bb8-80c1-b99b8dbe4a7e",
+        "linear_issue_identifier": "SM1-2",
+        "materialized": true
       },
       "scope": {
         "exclude": [],
@@ -19,7 +21,7 @@
           "docs/status.md"
         ]
       },
-      "status": "pending",
+      "status": "done",
       "title": "Document the graph smoke proof",
       "validation": {
         "commands": [
@@ -44,7 +46,9 @@
       "id": "smoke-graph-002",
       "kind": "code",
       "materialization": {
-        "materialized": false
+        "linear_issue_id": "e1d035ed-f4ec-4c6c-8d54-963f2769cef6",
+        "linear_issue_identifier": "SM1-3",
+        "materialized": true
       },
       "scope": {
         "exclude": [],
@@ -53,7 +57,7 @@
           "test/symphony_smoke1_test.exs"
         ]
       },
-      "status": "pending",
+      "status": "done",
       "title": "Add a tiny graph smoke helper",
       "validation": {
         "commands": [
