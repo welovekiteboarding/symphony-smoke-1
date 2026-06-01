@@ -28,7 +28,7 @@
           "docs/failure-path-smoke.md"
         ]
       },
-      "status": "pending",
+      "status": "done",
       "title": "Exercise finalization repair smoke path",
       "validation": {
         "commands": [
