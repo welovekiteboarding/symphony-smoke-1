@@ -1,0 +1,31 @@
+{
+  "env": {
+    "required": [
+      "LINEAR_API_KEY"
+    ]
+  },
+  "project": {
+    "name": "symphony-smoke-1"
+  },
+  "github": {
+    "repo": "welovekiteboarding/symphony-smoke-1"
+  },
+  "linear": {
+    "team_key": "SM1",
+    "team_name": "SymphonySmoke1",
+    "workflow_states": [
+      "Todo",
+      "In Progress",
+      "Finalizing",
+      "Human Review",
+      "Rework",
+      "Merging",
+      "Done"
+    ]
+  },
+  "proof_issue": {
+    "state": "Todo",
+    "description": "Add a new file at docs/live-proof-setup-run-merge.md. Record only facts visible before Symphony finalization commits this issue.\n\n# Live Proof Setup Run Merge\n\nRequired facts:\n- Proof issue: <issue identifier>\n- Branch: <current git branch>\n- Base HEAD: <current git HEAD SHA and subject before this proof file is committed>\n- File evidence: <state that docs/live-proof-setup-run-merge.md was created for this proof issue>\n- Current scope: <state only what this issue proves before review or merge>\n\nRules:\n- Use only facts visible in the issue prompt, workspace files, current branch name, or local git history before finalization.\n- Do not record or claim the final issue commit SHA; Symphony creates that commit after the worker returns.\n- Do not claim a PR, review result, merge result, or Linear workflow state unless that fact is visible in the workspace before finalization.\n- Markdown bullet marker style is not significant; '-' and '*' bullets are both acceptable when the required facts are present.",
+    "title": "Create deterministic live-proof artifact"
+  }
+}
